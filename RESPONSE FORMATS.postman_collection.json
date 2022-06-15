@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "53b3e3d2-fa96-4a9c-8f11-a98585aefabf",
+		"name": "RESPONSE FORMATS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5040522"
+	},
+	"item": [
+		{
+			"name": "XML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if Content-Type=application/xml\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\",\"application/xml\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpbin.org/xml",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEXT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type=text/plain\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\",\"text/plain\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpbin.org/robots.txt",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"robots.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type=application/json\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\",\"application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpbin.org/json",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type=text/html; charset=utf-8\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\",\"text/html; charset=utf-8\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpbin.org/html",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"html"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
